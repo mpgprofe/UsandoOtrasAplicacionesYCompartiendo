@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-Button lanzarWeb, lanzarMapa, compartirWhatsapp;
-EditText direccion,coordenadas, textoWhatsapp;
+Button lanzarWeb, lanzarMapa, compartirWhatsapp, lanzarCorreo;
+EditText direccion,coordenadas, textoWhatsapp, direccioncorreo, asunto, mensaje;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,10 @@ EditText direccion,coordenadas, textoWhatsapp;
         lanzarMapa =findViewById(R.id.buttonMapa);
         compartirWhatsapp = findViewById(R.id.buttonWhatsapp);
         textoWhatsapp = findViewById(R.id.editTextWhatsapp);
+        lanzarCorreo = findViewById(R.id.buttonCorreo);
+        direccioncorreo = findViewById(R.id.editTextTextEmailAddress);
+        asunto = findViewById(R.id.editTextAsunto);
+        mensaje = findViewById(R.id.editTextTextPersonName5);
 
         lanzarWeb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +67,17 @@ EditText direccion,coordenadas, textoWhatsapp;
 
             }
         });
-
+lanzarCorreo.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{direccioncorreo.getText().toString()});
+        intent.putExtra(Intent.EXTRA_SUBJECT, asunto.getText().toString());
+        intent.putExtra(Intent.EXTRA_TEXT, mensaje.getText().toString());
+        intent.setType("message/rfc822");
+        startActivity(intent);
+    }
+});
 
     }
 }
