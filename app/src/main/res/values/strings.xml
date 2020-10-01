@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UsandoOtrasAplicacionesYCompartiendo</string>
+    <string name="lanzar">Abrir URL</string>
+    <string name="elige_navegador">Selecciona tu navegador favorito</string>
+</resources>
