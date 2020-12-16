@@ -44,7 +44,7 @@ EditText direccion,coordenadas, textoWhatsapp, direccioncorreo, asunto, mensaje;
             @Override
             public void onClick(View view) {
                 Intent intento = new Intent(Intent.ACTION_VIEW);
-                intento.setData(Uri.parse("geo:"+direccion.getText().toString()));
+                intento.setData(Uri.parse("geo:"+coordenadas.getText().toString()+"?q="+coordenadas.getText().toString()+"(Aquí estoy)"));
                 startActivity(intento);
             }
         });

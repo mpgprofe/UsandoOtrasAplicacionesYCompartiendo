@@ -34,7 +34,7 @@
         android:layout_marginTop="14dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="18.0179237,-76.8706972"
+        android:text="38.2598964,-5.68561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLanzaWeb" />
 
